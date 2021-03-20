@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toggle button</title>
+</head>
+<body class="">
+	<style type="text/css">
+		* {
+			margin:0; padding:0;
+			box-sizing: border-box;
+		}
+		body {
+			height: 100%;
+			background-color: #eee;
+			transition: .2s;
+		}
+		body.dark {
+			background-color: #101010;
+		}
+		.toggle-btn {
+			width: 70px; height: 30px;
+			position: absolute;
+			top: 50%; left: 50%;
+			transform: translate(-50%);
+	    box-shadow: 0px 0px 3px 0px #999 inset;
+			border-radius:15px;
+			white-space: nowrap;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.toggle-btn.dark-mode {
+	    background: #000;
+		}
+		.toggle-btn.light-mode {
+	    background: #fff;
+		}
+		.ball-icon {
+			width: 30px; height: 30px;
+			display: inline-block;
+			position: absolute;
+			left:0;
+			border-radius: 50%;
+			background: #000;
+			z-index: 100;			
+			transition: .3s;
+		}
+		.dark-mode > .ball-icon {
+			left:calc(100% - 30px);
+			background-color: #eee;
+		}
+	</style>
+
+	<div id="toggleBtn" class="toggle-btn light-mode">
+		<div class="ball-icon"></div>
+	</div>
+
+	<script type="text/javascript">
+    // <!-- console.log("refreshed"); -->
+		// setTimeout(() => {
+    // window.location.reload(1);
+// }, 5000)
+
+		toggleBtn.addEventListener("click", function() {
+			document.body.classList.toggle("dark");
+			toggleBtn.classList.toggle("light-mode");
+			toggleBtn.classList.toggle("dark-mode");
+		})
+	</script>
+</body>
+</html>
